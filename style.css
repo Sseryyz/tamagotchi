@@ -6,65 +6,62 @@
 body {
     background-color: #333;
 }
-.feed {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    background-color: #333;
-    color: azure;
-    border: 1px solid dimgray;
-    border-radius: 30%;
-    padding: 5px;
-    cursor: pointer;
-    font-size: 16px;
+.game {
+
 }
-.feed:hover {
-    border: 1px solid whitesmoke;
+.info {
+    position: relative;
+    top: 5px;
+    left: 50%;
+    transform: translate(-50%);
+    color: lightgrey;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
 }
-.play {
-    position: absolute;
-    top: 65px;
-    left: 30px;
-    background-color: #333;
-    color: azure;
-    border: 1px solid dimgray;
-    border-radius: 30%;
-    padding: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-.play:hover {
-    border: 1px solid whitesmoke;
-}
-.panish {
-    position: absolute;
-    top: 100px;
-    left: 30px;
-    background-color: #333;
-    color: azure;
-    border: 1px solid dimgray;
-    border-radius: 30%;
-    padding: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-.panish:hover {
-    border: 1px solid whitesmoke;
-}
-.tmg {
-    position: absolute;
+.buttons {
+    position: relative;
     top: 10px;
     left: 50%;
     transform: translate(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+.btn {
+    background-color: #333;
+    color: lightgrey;
+    border: 1px solid dimgray;
+    border-radius: 30%;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn:hover {
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+}
+.tmg {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100px;
 }
 .tmg-happy {
-    height: 100px;
-    width: 100px;
+    height: 100%;
+    width: 100%;
     border-radius: 100%;
 }
 .tmg-sad {
-    height: 100px;
-    width: 100px;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    display: none;
+}
+.tmg-laughing  {
+    height: 100%;
+    width: 100%;
     border-radius: 100%;
     display: none;
 }

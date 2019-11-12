@@ -2,9 +2,8 @@
 
 
 let feeder = function () {
-    const el = document.getElementById("tmg-happy");
+    const el = document.getElementById("tmg");
     const { clientWidth, clientHeight } = el;
-    el.style.height = `calc(${clientHeight}px + 5px)`;
     el.style.width = `calc(${clientWidth}px + 5px)`;
 }
 let play = function () {
