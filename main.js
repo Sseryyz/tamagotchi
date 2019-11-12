@@ -1,18 +1,21 @@
 
-// function showGameTpl() {
-//     const gameTpl = document.getElementById("game-tpl").content;
-//     document.body.append(gameTpl);
-// }
+
 
 let feeder = function () {
-    const el = document.getElementById("tmg");
+    const el = document.getElementById("tmg-happy");
     const { clientWidth, clientHeight } = el;
-    el.style.height = `calc(${clientHeight}px + 10px)`;
-    el.style.width = `calc(${clientWidth}px + 10px)`;
+    el.style.height = `calc(${clientHeight}px + 5px)`;
+    el.style.width = `calc(${clientWidth}px + 5px)`;
+}
+let play = function () {
 
-    el.style.background = 'red'
+}
+let punish = function () {
+
 }
 document.getElementById("feed").addEventListener("click", feeder);
+document.getElementById("play").addEventListener("click", play);
+document.getElementById("panish").addEventListener("click", punish);
 
 
 

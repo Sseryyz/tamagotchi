@@ -23,7 +23,7 @@ body {
 }
 .play {
     position: absolute;
-    top: 70px;
+    top: 65px;
     left: 30px;
     background-color: #333;
     color: azure;
@@ -36,54 +36,35 @@ body {
 .play:hover {
     border: 1px solid whitesmoke;
 }
+.panish {
+    position: absolute;
+    top: 100px;
+    left: 30px;
+    background-color: #333;
+    color: azure;
+    border: 1px solid dimgray;
+    border-radius: 30%;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.panish:hover {
+    border: 1px solid whitesmoke;
+}
 .tmg {
-    position: relative;
+    position: absolute;
     top: 10px;
-    left: 100px;
-    background-color: #f2f2f2;
-    height: 150px;
-    width: 150px;
-    color: black;
-    border-radius: 100%;
-    text-align: center;
-}
-.tmg-eyes {
-    display: flex;
-    justify-content: center;
-    padding-top: 40px;
-    position: absolute;
-    top: 0%;
     left: 50%;
     transform: translate(-50%);
 }
-.left-eye {
-    background-color: lightskyblue;
-    color: black;
-    height: 30px;
-    width: 30px;
+.tmg-happy {
+    height: 100px;
+    width: 100px;
     border-radius: 100%;
-    margin-right: 10%;
-    font-size: 24px;
 }
-.right-eye {
-    background-color: lightskyblue;
-    color: black;
-    height: 30px;
-    width: 30px;
+.tmg-sad {
+    height: 100px;
+    width: 100px;
     border-radius: 100%;
-    margin-left: 10%;
-    font-size: 24px;
-}
-.tmg-happy-mouth {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%);
-}
-.tmg-sad-mouth {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%);
     display: none;
 }
