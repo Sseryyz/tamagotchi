@@ -6,24 +6,22 @@
 body {
     background-color: #333;
 }
-.game {
-
-}
-.info {
-    position: relative;
-    top: 5px;
+.center {
     left: 50%;
     transform: translate(-50%);
+}
+.info {
+    margin: 5px 0;
+    position: relative;
+    top: 5px;
     color: lightgrey;
-    width: 80%;
+    width: 70%;
     display: flex;
     justify-content: space-between;
 }
 .buttons {
     position: relative;
     top: 10px;
-    left: 50%;
-    transform: translate(-50%);
     display: flex;
     justify-content: space-between;
     width: 70%;
@@ -44,8 +42,6 @@ body {
 .tmg {
     position: relative;
     top: 20px;
-    left: 50%;
-    transform: translate(-50%);
     width: 100px;
 }
 .tmg-happy {
