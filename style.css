@@ -44,18 +44,18 @@ body {
     top: 20px;
     width: 100px;
 }
-.tmg-happy {
+.tmg-smile {
     height: 100%;
     width: 100%;
     border-radius: 100%;
 }
-.tmg-sad {
+.tmg-sadSmile {
     height: 100%;
     width: 100%;
     border-radius: 100%;
     display: none;
 }
-.tmg-laughing  {
+.tmg-bigSmile  {
     height: 100%;
     width: 100%;
     border-radius: 100%;
