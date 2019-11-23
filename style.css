@@ -42,20 +42,20 @@ body {
 .tmg {
     position: relative;
     top: 20px;
-    width: 100px;
+    width: 150px;
 }
-.tmg-smile {
+#tmg-smile {
     height: 100%;
     width: 100%;
     border-radius: 100%;
 }
-.tmg-sadSmile {
+#tmg-sadSmile {
     height: 100%;
     width: 100%;
     border-radius: 100%;
     display: none;
 }
-.tmg-bigSmile  {
+#tmg-bigSmile  {
     height: 100%;
     width: 100%;
     border-radius: 100%;
