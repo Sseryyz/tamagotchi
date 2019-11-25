@@ -15,9 +15,12 @@ body {
     position: relative;
     top: 5px;
     color: lightgrey;
-    width: 70%;
+    width: 60%;
     display: flex;
     justify-content: space-between;
+}
+.status-val {
+    display: none;
 }
 .buttons {
     position: relative;
