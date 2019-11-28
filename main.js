@@ -50,7 +50,7 @@ let tmgDisplayNone = function () {
 };
 
 let status = function () {
-  if (el.style.width < `calc(180px)`) {
+  if (el.clientWidth < 180) {
     document.getElementById("fed-up").style.display = "none";
     document.getElementById("hungry").style.display = "inline-block";
   } else (
@@ -62,7 +62,7 @@ let status = function () {
 let health = function () {
   document.getElementById("healthy").style.display = "inline-block";
 
-  if ((el.style.width < `calc(150px)`) || (el.style.width > `calc(250px)`)) {
+  if ((el.clientWidth < 150) || (el.clientWidth > 250)) {
     document.getElementById("healthy").style.display = "none";
     document.getElementById("ill").style.display = "inline-block";
   } else document.getElementById("ill").style.display = "none";
