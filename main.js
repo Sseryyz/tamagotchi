@@ -8,11 +8,14 @@ setInterval(() => {
   const el = document.getElementById("tmg");
   const { clientWidth, clientHeight } = el;
   el.style.width = `calc(${clientWidth}px - 1px)`;
+}, 1000);
+
+setInterval(() => {
   status();
   health();
   weight();
   age();
-}, 1000);
+  },100);
 
 let feeder = function() {
   const el = document.getElementById("tmg");
@@ -28,10 +31,10 @@ let player = function() {
   tmgDisplayNone()
   bigSmile.style.display = "block";
 
-  setTimeout(() => {
+  let timeout = setTimeout(() => {
     tmgDisplayNone()
     smile.style.display = "block";
-  }, 7000);
+  }, 3000);
 };
 
 let punisher = function() {
@@ -71,11 +74,11 @@ let health = function () {
 let weight = function () {
   let el = document.getElementById("tmg");
   let { clientWidth, clientHeight } = el;
-  document.getElementById("kg").textContent = el.clientWidth + "kg";
+  document.getElementById("weight").textContent = "Weight: " + el.clientWidth + "kg";
 }
 
 let age = function () {
-  document.getElementById("year").textContent = years;
+  document.getElementById("age").textContent = "Age: " + years;
 };
 let years = 0;
 setInterval( function () { years++; }, 10000);
