@@ -1,14 +1,15 @@
 const smile = document.getElementById("tmg-smile");
 const sadSmile = document.getElementById("tmg-sadSmile");
 const bigSmile = document.getElementById("tmg-bigSmile");
+const fartSmile = document.getElementById("tmg-fartSmile");
 
 const feedBtn = document.getElementById("feed");
 
+const el = document.getElementById("tmg");
+
 setInterval(() => {
-  const el = document.getElementById("tmg");
-  const { clientWidth, clientHeight } = el;
-  el.style.width = `calc(${clientWidth}px - 1px)`;
-}, 1000);
+  el.style.width = `calc(${el.clientWidth}px - 1px)`
+  }, 1000);
 
 setInterval(() => {
   status();
@@ -18,13 +19,9 @@ setInterval(() => {
   },100);
 
 let feeder = function() {
-  const el = document.getElementById("tmg");
-  const { clientWidth, clientHeight } = el;
-  el.style.width = `calc(${clientWidth}px + 10px)`;
-
+  el.style.width = `calc(${el.clientWidth}px + 10px)`;
   tmgDisplayNone()
   smile.style.display = "block";
-
 };
 
 let player = function() {
@@ -49,8 +46,6 @@ let tmgDisplayNone = function () {
 };
 
 let status = function () {
-  const el = document.getElementById("tmg");
-  let { clientWidth, clientHeight } = el;
   if (el.style.width < `calc(180px)`) {
     document.getElementById("fed-up").style.display = "none";
     document.getElementById("hungry").style.display = "inline-block";
@@ -61,8 +56,6 @@ let status = function () {
 };
 
 let health = function () {
-  const el = document.getElementById("tmg");
-  const { clientWidth, clientHeight } = el;
   document.getElementById("healthy").style.display = "inline-block";
 
   if ((el.style.width < `calc(150px)`) || (el.style.width > `calc(250px)`)) {
@@ -72,8 +65,6 @@ let health = function () {
 }
 
 let weight = function () {
-  let el = document.getElementById("tmg");
-  let { clientWidth, clientHeight } = el;
   document.getElementById("weight").textContent = "Weight: " + el.clientWidth + "kg";
 }
 
