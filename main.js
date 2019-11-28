@@ -7,11 +7,14 @@ const feedBtn = document.getElementById("feed");
 
 const el = document.getElementById("tmg");
 
+let years = 0;
+
 setInterval(() => {
   el.style.width = `calc(${el.clientWidth}px - 1px)`
   }, 1000);
 
 setInterval(() => {
+  overeaten();
   status();
   health();
   weight();
@@ -43,6 +46,7 @@ let tmgDisplayNone = function () {
   smile.style.display = "none";
   sadSmile.style.display = "none";
   bigSmile.style.display = "none";
+  fartSmile.style.display = "none";
 };
 
 let status = function () {
@@ -62,17 +66,29 @@ let health = function () {
     document.getElementById("healthy").style.display = "none";
     document.getElementById("ill").style.display = "inline-block";
   } else document.getElementById("ill").style.display = "none";
-}
+};
 
 let weight = function () {
   document.getElementById("weight").textContent = "Weight: " + el.clientWidth + "kg";
-}
+};
+
+let overeaten = function () {
+  if (el.clientWidth > 300) {
+    tmgDisplayNone()
+    fartSmile.style.display = "block";
+  } else {
+    tmgDisplayNone();
+    smile.style.display = "block";
+  }
+};
 
 let age = function () {
   document.getElementById("age").textContent = "Age: " + years;
 };
-let years = 0;
-setInterval( function () { years++; }, 10000);
+
+setInterval( () => {
+    years++;
+  }, 10000);
 
 feedBtn.addEventListener("click", feeder);
 document.getElementById("play").addEventListener("click", player);
