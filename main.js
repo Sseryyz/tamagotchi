@@ -3,44 +3,21 @@ const sadSmile = document.getElementById("tmg-sadSmile");
 const bigSmile = document.getElementById("tmg-bigSmile");
 const fartSmile = document.getElementById("tmg-fartSmile");
 
-const feedBtn = document.getElementById("feed");
-
 const el = document.getElementById("tmg");
 
 let years = 0;
 
-setInterval(() => {
-  el.style.width = `calc(${el.clientWidth}px - 1px)`
-  }, 1000);
+setInterval( () => {
+  years++;
+}, 10000);
 
 setInterval(() => {
-  overeaten();
+  el.style.width = `calc(${el.clientWidth}px - 1px)`;
   status();
   health();
   weight();
   age();
-  },100);
-
-let feeder = function() {
-  el.style.width = `calc(${el.clientWidth}px + 10px)`;
-  tmgDisplayNone()
-  smile.style.display = "block";
-};
-
-let player = function() {
-  tmgDisplayNone()
-  bigSmile.style.display = "block";
-
-  let timeout = setTimeout(() => {
-    tmgDisplayNone()
-    smile.style.display = "block";
-  }, 3000);
-};
-
-let punisher = function() {
-  tmgDisplayNone()
-  sadSmile.style.display = "block";
-};
+  }, 1000);
 
 let tmgDisplayNone = function () {
   smile.style.display = "none";
@@ -49,20 +26,53 @@ let tmgDisplayNone = function () {
   fartSmile.style.display = "none";
 };
 
+let overeaten = function () {
+  if (el.clientWidth > 250) {
+    tmgDisplayNone()
+    fartSmile.style.display = "block";
+  } else {
+    tmgDisplayNone();
+    smile.style.display = "block";
+  }
+};
+
+let feeder = function() {
+  el.style.width = `calc(${el.clientWidth}px + 10px)`;
+  tmgDisplayNone()
+  smile.style.display = "block";
+  setInterval( () => {
+    overeaten();
+  },10000);
+};
+
+let player = function() {
+  tmgDisplayNone()
+  bigSmile.style.display = "block";
+  setTimeout( () => {
+    tmgDisplayNone();
+    smile.style.display = "block";
+    },3000);
+};
+
+let punisher = function() {
+  tmgDisplayNone()
+  sadSmile.style.display = "block";
+};
+
 let status = function () {
   if (el.clientWidth < 180) {
     document.getElementById("fed-up").style.display = "none";
     document.getElementById("hungry").style.display = "inline-block";
-  } else (
-    document.getElementById("fed-up").style.display = "inline-block",
-    document.getElementById("hungry").style.display = "none"
-  )
+  } else {
+    document.getElementById("fed-up").style.display = "inline-block";
+    document.getElementById("hungry").style.display = "none";
+  }
 };
 
 let health = function () {
   document.getElementById("healthy").style.display = "inline-block";
 
-  if ((el.clientWidth < 150) || (el.clientWidth > 250)) {
+  if ((el.clientWidth < 150) || (el.clientWidth > 270)) {
     document.getElementById("healthy").style.display = "none";
     document.getElementById("ill").style.display = "inline-block";
   } else document.getElementById("ill").style.display = "none";
@@ -72,24 +82,10 @@ let weight = function () {
   document.getElementById("weight").textContent = "Weight: " + el.clientWidth + "kg";
 };
 
-let overeaten = function () {
-  if (el.clientWidth > 300) {
-    tmgDisplayNone()
-    fartSmile.style.display = "block";
-  } else {
-    tmgDisplayNone();
-    smile.style.display = "block";
-  }
-};
-
 let age = function () {
   document.getElementById("age").textContent = "Age: " + years;
 };
 
-setInterval( () => {
-    years++;
-  }, 10000);
-
-feedBtn.addEventListener("click", feeder);
+document.getElementById("feed").addEventListener("click", feeder);
 document.getElementById("play").addEventListener("click", player);
 document.getElementById("panish").addEventListener("click", punisher);
