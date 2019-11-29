@@ -53,24 +53,7 @@ body {
     top: 20px;
     width: 200px;
 }
-#tmg-smile {
-    height: 100%;
-    width: 100%;
-    border-radius: 100%;
-}
-#tmg-sadSmile {
-    height: 100%;
-    width: 100%;
-    border-radius: 100%;
-    display: none;
-}
-#tmg-bigSmile  {
-    height: 100%;
-    width: 100%;
-    border-radius: 100%;
-    display: none;
-}
-#tmg-fartSmile {
+.tmg-face {
     height: 100%;
     width: 100%;
     border-radius: 100%;

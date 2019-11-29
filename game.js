@@ -38,6 +38,11 @@ function init({ startAge }) {
     let years = startAge;
     let actionInProgress = state();
 
+    const showTmgElement = function () {
+        smile.style.display = "block";
+    }
+    showTmgElement();
+
     setInterval( () => {
         years++;
         overeaten();
@@ -51,14 +56,14 @@ function init({ startAge }) {
         age();
     }, 1000);
 
-    let tmgDisplayNone = function () {
+    const tmgDisplayNone = function () {
         smile.style.display = "none";
         sadSmile.style.display = "none";
         bigSmile.style.display = "none";
         fartSmile.style.display = "none";
     };
 
-    let overeaten = function () {
+    const overeaten = function () {
         tmgDisplayNone()
 
         if (el.clientWidth > 250) {
@@ -68,7 +73,7 @@ function init({ startAge }) {
         }
     };
 
-    let feeder = function() {
+    const feed = function() {
         el.style.width = `calc(${el.clientWidth}px + 10px)`;
         tmgDisplayNone()
         smile.style.display = "block";
@@ -86,22 +91,24 @@ function init({ startAge }) {
         actionInProgress
     );
 
-    let punish = action(()=> {
+    const punish = action(()=> {
         tmgDisplayNone()
         sadSmile.style.display = "block";
     }, null, actionInProgress);
 
-    let status = function () {
+    const status = function () {
+        let fedUp = document.getElementById("fed-up");
+        let hungry = document.getElementById("hungry");
         if (el.clientWidth < 180) {
-            document.getElementById("fed-up").style.display = "none";
-            document.getElementById("hungry").style.display = "inline-block";
+            fedUp.style.display = "none";
+            hungry.style.display = "inline-block";
         } else {
-            document.getElementById("fed-up").style.display = "inline-block";
-            document.getElementById("hungry").style.display = "none";
+            fedUp.style.display = "inline-block";
+            hungry.style.display = "none";
         }
     };
 
-    let health = function () {
+    const health = function () {
         document.getElementById("healthy").style.display = "inline-block";
 
         if ((el.clientWidth < 150) || (el.clientWidth > 270)) {
@@ -110,15 +117,15 @@ function init({ startAge }) {
         } else document.getElementById("ill").style.display = "none";
     };
 
-    let weight = function () {
+    const weight = function () {
         document.getElementById("weight").textContent = "Weight: " + el.clientWidth + "kg";
     };
 
-    let age = function () {
+    const age = function () {
         document.getElementById("age").textContent = "Age: " + years;
     };
 
-    document.getElementById("feed").addEventListener("click", feeder);
+    document.getElementById("feed").addEventListener("click", feed);
     document.getElementById("play").addEventListener("click", play);
     document.getElementById("panish").addEventListener("click", punish);
 }
